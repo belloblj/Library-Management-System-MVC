@@ -1,0 +1,42 @@
+@model List<LMS.Models.Reader>
+
+<h2>Readers</h2>
+
+<p>
+    <a class="btn btn-primary" href="/Reader/Create">Add New Reader</a>
+</p>
+
+<table class="table table-striped table-hover shadow-sm">
+    @* zebra stripes, hover effect, and a soft shadow for better look *@
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Registered Date</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Id</td>
+                <td>@r.FirstName</td>
+                <td>@r.LastName</td>
+                <td>@r.Email</td>
+                <td>@r.PhoneNumber</td>
+                <td>@r.RegisteredDate.ToShortDateString()</td>
+                <td>@r.Address</td>
+                <td>
+                    <a class="btn btn-warning" href="/Reader/Edit/@r.Id">Edit</a>
+                    <a class="btn btn-danger" href="/Reader/Delete/@r.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿<h2>Dashboard</h2>
+
+<p>Welcome, @Context.Session.GetString("UserName")</p>
+
+<div class="list-group">
+
+    <a href="/Book" class="list-group-item list-group-item-action">
+        <i class="bi bi-book"></i> Manage Books
+    </a>
+
+    <a href="/Reader" class="list-group-item list-group-item-action">
+        <i class="bi bi-people"></i> Manage Readers
+    </a>
+
+    <a href="/Borrowing" class="list-group-item list-group-item-action">
+        <i class="bi bi-arrow-left-right"></i> Manage Borrowings
+    </a>
+
+    <a href="/Account/Logout" class="list-group-item list-group-item-action text-danger">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </a>
+
+</div>

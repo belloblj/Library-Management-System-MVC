@@ -1,0 +1,19 @@
+﻿@model LMS.Models.Borrowing
+
+<h2>Delete Borrowing</h2>
+
+<p>Are you sure you want to delete this borrowing record?</p>
+
+<div>
+    <strong>ID:</strong> @Model.Id <br />
+    <strong>Book ID:</strong> @Model.BookId <br />
+    <strong>Reader ID:</strong> @Model.ReaderId <br />
+    <strong>Borrow Date:</strong> @Model.BorrowDate.ToShortDateString() <br />
+    <strong>Due Date:</strong> @Model.DueDate.ToShortDateString() <br />
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger mt-3">Delete</button>
+    <a href="/Borrowing" class="btn btn-secondary mt-3">Cancel</a>
+</form>
